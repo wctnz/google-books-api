@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: start;
+}
+.inputContainer {
+  display: flex;
+  position: relative;
+  width: 560px;
+  margin-bottom: 20px;
+  padding-top: 40px;
+}
+
+.input {
+  height: 42px;
+  width: 100%;
+  margin-bottom: 2px;
+  border: 1px solid black;
+}
+
+.searchButton {
+  margin-bottom: 3px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  opacity: 0.5;
+}
+
+.errorMessage {
+  color: red;
+}
+
+select {
+  height: 42px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.allSelects {
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.resultsFound {
+  text-align: center;
+  margin: 20px 50px 20px 0;
+}
+
+.loadMoreBtn {
+  width: 100px;
+  margin: 20px 0 20px 230px;
+  padding: 5px 15px;
+  color: teal;
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+
+.loadMoreBtn:hover {
+  background: teal;
+  border: 1px solid teal;
+  color: white;
+}
+
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  margin-left: 25px;
+  max-width: 535px;
+  flex-wrap: wrap;
+}
+
+.page {
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.page__current {
+  border: 2px solid orange;
+  font-weight: bold;
+  }

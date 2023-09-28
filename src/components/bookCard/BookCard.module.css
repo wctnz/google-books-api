@@ -1,0 +1,29 @@
+
+.main {
+  height: 20vh;
+  /* max-width: 515px; */
+  width: 92%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 3px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.5s;
+}
+
+.main:hover {
+  box-shadow: 0 0.25rem 0.5em 0 rgba(0, 0, 0, 0.25), 0 0.4rem 1.25em 0 rgba(0, 0, 0, 0.15);
+transform: scale(0.9);
+}
+
+img {
+    width: 70px;
+    height: 70x;
+}
+
+/* border py-3 px-5 rounded mb-2 hover:shadow-md hover:bg-gray-100 transition=all */
+
+.category {
+  margin-top: 10px;
+}

@@ -1,0 +1,75 @@
+.overlay {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlayInner {
+  background: white;
+  width: 700px;
+  height: 450px;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  font-size: 1.3rem;
+}
+
+.overlayInner .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  background-color: transparent;
+}
+
+.overlayInner .innerBox {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.overlayInner .innerBox img {
+  margin-right: 20px;
+  width: 150px;
+  height: 200px;
+}
+
+.overlayInner .innerBox h3 {
+  margin-top: 10px;
+}
+
+.overlayInner .innerBox button {
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #24a0ed;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+}
+
+.overlayInner .description {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 13px;
+}
+
+.close {
+  color: rgba(0, 0, 0, 1);
+}
+
+.close:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
