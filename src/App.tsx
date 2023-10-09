@@ -63,7 +63,7 @@ function App() {
     fetchBooks([search, order, startIndex, limit])
   }
 
-  console.log("localLoading", localLoading)
+  console.log("selected", selected)
 
   return (
     <div className="App">

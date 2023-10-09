@@ -16,15 +16,11 @@ const BookList: FC<BookListProps> = ({ localLoading, isLoading, data, selected, 
     <div>
       {isLoading && <p>Loading...</p>}
       {localLoading && !firstQuery && <p>Loading...</p>}
-      {
-        // data?.items?.length === 0
-        //   ? <p className={cl.notFound}>Книги не найдены</p>
-        //   : 
-        selected?.length && selected?.length === 0 && !firstQuery ?
-          <p>Книги не найдены</p>
-          : selected?.map(book =>
-            <BookCard key={book.etag} item={book} />
-          )
+      {!firstQuery &&  selected?.length === 0 && !localLoading && !isLoading ?
+        <p>Книги не найдены</p>
+        : selected?.map(book =>
+          <BookCard key={book.etag} item={book} />
+        )
       }
     </div>
   );
