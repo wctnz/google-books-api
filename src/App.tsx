@@ -13,6 +13,7 @@ function App() {
   const [startIndex, setStartIndex] = useState<number>(0)
   const [limit, setLimit] = useState<number>(30)
   const [books, setBooks] = useState<IItem[] | null>(null)
+  const [localLoading, setLocalLoading] = useState<boolean>(false)
   let [fetchBooks, { isLoading, data, isError }] = useLazySearchBooksQuery()
 
   useEffect(() => {
@@ -25,20 +26,26 @@ function App() {
 
   const keyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
+      setLocalLoading(true)
+      setBooks(null)
       fetchBooks([search, "relevance", startIndex, limit])
       setStartIndex(30)
       setTimeout(() => {
         setFirstQuery(false)
-      }, 1000)
+      }, 700)
+      setLocalLoading(false)
     }
   }
 
   const clickHandler = () => {
+    setLocalLoading(true)
+    setBooks(null)
     fetchBooks([search, "relevance", startIndex, limit])
     setStartIndex(30)
     setTimeout(() => {
       setFirstQuery(false)
-    }, 1000)
+      setLocalLoading(false)
+    }, 700)
   }
 
   const selectCategoryHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -55,6 +62,8 @@ function App() {
     console.log("startIndex", startIndex)
     fetchBooks([search, order, startIndex, limit])
   }
+
+  console.log("localLoading", localLoading)
 
   return (
     <div className="App">
@@ -86,8 +95,8 @@ function App() {
         </div>
       </div>
       {data && <div className="resultsFound"><span>Found {data?.totalItems} results</span></div>}
-      <BookList isLoading={isLoading} data={data} selected={selected} firstQuery={firstQuery} />
-      {data && <div><button onClick={loadMoreBtnHandler} className="loadMoreBtn">Load more</button></div>}
+      <BookList localLoading={localLoading} isLoading={isLoading} data={data} selected={selected} firstQuery={firstQuery} />
+      {data?.items.length !== undefined && !localLoading && <div><button onClick={loadMoreBtnHandler} className="loadMoreBtn">Load more</button></div>}
     </div>
   );
 }
